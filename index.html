@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <title>Play Valorant NOW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 100px;
+        } 
+        
+        body {  
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            width: auto;
+        }
+        button {
+            font-size: 50px;
+            height: auto;
+            width: auto;
+            font-family: 'Fredoka', sans-serif;
+            border-radius: 15px;
+        }
+        #yesButton {
+            margin-right: 10px;
+            background-color: lightgreen;
+        }
+        #noButton {
+            background-color: #FF6347;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Can u play Valorant rn</h1>
+    <div class="buttons">
+        <button id="yesButton">Yes</button><button id="noButton">No</button>
+    </div>
+    <div id="imgDiv"></div>
+    <div id="details"></div>
+    
+    <script>
+        function wait(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function delayedAction() {
+            await wait(2000);
+            console.log("Delayed action after 2000 milliseconds");
+        }
+
+        function createImage() {
+            const imgElement = document.createElement("img");
+            imgElement.src = "C:\\Users\\capta\\OneDrive\\Desktop\\Web Projects\\New folder\\IMG_6358.png";
+            return imgElement;
+        }
+
+        const noButton = document.getElementById("noButton");
+        const yesButton = document.getElementById("yesButton");
+        const imgDiv = document.getElementById("imgDiv");
+
+        function firstStage() {
+            noButton.textContent = "Are you sure? :(";
+            yesButton.style.fontSize = "75px";
+
+            function secondStage() {
+                noButton.textContent = "Why not";
+                yesButton.style.fontSize = "100px";
+
+                function thirdStage() {
+                    noButton.textContent = "Your my duo tho";
+                    yesButton.style.fontSize = "125px";
+
+                    function fourthStage() {
+                        noButton.textContent = "Cmon";
+                        yesButton.style.fontSize = "150px";
+
+                        function fifthStage() {
+                            noButton.textContent = "Pls I really want to play with uuuu";
+                            yesButton.style.fontSize = "175px";
+
+                            function sixthStage() {
+                                noButton.textContent = "You have to play with me >:(";
+                                yesButton.style.fontSize = "200px";
+
+                                function seventhStage() {
+                                    noButton.textContent = "Hmph!";
+                                    yesButton.style.fontSize = "225px";
+                                    function eighthStage() {
+                                        yesButton.style.fontSize = "250px";
+                                        noButton.textContent = "Ur not getting a choice anymore lil bro >:)";
+
+                                        function yesStage() {
+                                            const paragraph = document.createElement("p");
+                                            const details = document.getElementById("details");
+                                            details.style.margin = "10px";
+                                            paragraph.textContent = "dedicated to zhang sheng rui (can we actually play val now and not play ur booga booga)";
+                                            details.appendChild(paragraph);
+
+                                            noButton.style.display = "none";
+                                            yesButton.style.display = "none";
+                                            document.getElementById("heading").textContent = "FINALLY";
+
+                                            const existingImage = imgDiv.querySelector("img");
+
+                                            if (!existingImage) {
+                                                const imgElement = createImage();
+                                                imgDiv.appendChild(imgElement);
+                                            }
+                                        }
+
+                                        document.getElementById("yesButton").addEventListener("click", yesStage);
+                                    }
+                                    noButton.addEventListener("click", eighthStage);
+                                }
+
+                                noButton.addEventListener("click", seventhStage);
+                            }
+
+                            noButton.addEventListener("click", sixthStage);
+                        }
+
+                        noButton.addEventListener("click", fifthStage);
+                    }
+
+                    noButton.addEventListener("click", fourthStage);
+                }
+
+                noButton.addEventListener("click", thirdStage);
+            }
+
+            noButton.addEventListener("click", secondStage);
+        }
+
+        noButton.addEventListener("click", firstStage);
+    </script>
+</body>
+</html>
